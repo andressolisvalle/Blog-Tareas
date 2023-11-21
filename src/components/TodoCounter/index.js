@@ -10,7 +10,7 @@ function TodoCounter(){
   return (
     <h1 className="TodoCounter" >      
       {totalTodos === completedTodos ? (
-        <>¡Felicidades! Has completado todas las tareas.</>
+        <>¡Felicidades! Has completado todas las tareas!</>
       ) : (
         <>Has completado <span>{completedTodos}</span> de <span>{totalTodos}</span> TODOS</>
       )}
