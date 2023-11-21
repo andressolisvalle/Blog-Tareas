@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Blog-Tareas/static/css/main.5fd40694.css",
+    "main.js": "/Blog-Tareas/static/js/main.fff0af12.js",
+    "index.html": "/Blog-Tareas/index.html",
+    "main.5fd40694.css.map": "/Blog-Tareas/static/css/main.5fd40694.css.map",
+    "main.fff0af12.js.map": "/Blog-Tareas/static/js/main.fff0af12.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5fd40694.css",
+    "static/js/main.fff0af12.js"
+  ]
+}
