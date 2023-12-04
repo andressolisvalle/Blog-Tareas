@@ -1,9 +1,8 @@
 import React from "react";
-import { useLocalStorage } from "../hook/useLocarStorage";
+import { useLocalStorage } from "./useLocarStorage";
 
-const TodoContex = React.createContext();
 
-function TodoProvider({ children }) {
+function useTodos() {
   const {
     item: todos,
     saveItem: saveTodos,
@@ -12,7 +11,7 @@ function TodoProvider({ children }) {
   } = useLocalStorage('TODOS_V1', []);
 
   const [searchValue, setSearchValue] = React.useState('');
-  const [openModal, setOpenModal] = React.useState('true');
+  const [openModal, setOpenModal] = React.useState(false);
   
   const completedTodos = todos.filter(
     todo => todo.completed
@@ -51,8 +50,7 @@ function TodoProvider({ children }) {
     saveTodos(newTodos);
   };
 
-  return (
-    <TodoContex.Provider value={{
+  return {
       loading,
       error,
       completedTodos,
@@ -65,10 +63,7 @@ function TodoProvider({ children }) {
       openModal,
       setOpenModal,
       addTodo,
-    }}>
-      {children}
-    </TodoContex.Provider>
-  );
+    }
 }
 
-export { TodoContex, TodoProvider };
+export { useTodos };
