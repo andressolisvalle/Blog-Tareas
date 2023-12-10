@@ -1,15 +1,20 @@
-import React, { Children } from 'react';
+
 import './TodoList.css';
-import { TodoContex } from '../../App/useTodos';
-import { TodosLoadig } from '../TodosLoadig';
-import { TodoItem } from '../TodoItem';
-import { TodosError } from '../TodosError';
-import { EmpyTodos } from '../EmpyTodos/EmpyTodos';
-function TodoList({children}) {
+
+function TodoList(props) {
+  const renderFunc = props.children || props.render;
   return (
-    <ul className='TodoList'>
-      {children}
-    </ul>
+    <section className='TodoList-container'>
+      {props.error && props.onError()}
+      {props.loading && props.onLoading()}
+
+      {(!props.loading && !props.totalTodos) && props.onEmpyTodos()}
+      {(!!props.totalTodos && !props.searchedTodos.length) && props.onEmpySearchResult(props.seachText)}
+
+      {props.searchedTodos.map(renderFunc)}
+
+    </section>
+    
   );
 }
 

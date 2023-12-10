@@ -1,4 +1,4 @@
-.TodoCounter {
+h1 {
     font-size: 24px;
     text-align: center;
     margin: 0;
@@ -8,4 +8,8 @@
 
 .TodoCounter span {
     font-weight: 700
+}
+
+.TodoCounter--loading {
+    opacity: 25%;
 }
