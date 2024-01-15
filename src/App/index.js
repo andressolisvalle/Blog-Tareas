@@ -12,6 +12,7 @@ import { EmpyTodos } from '../components/EmpyTodos/EmpyTodos';
 import { Modal } from '../Modal';
 import { TodoForm } from '../TodoForm';
 import { TodoHeader } from '../TodoHeader';
+import { ChangeAlert } from '../ChangeAlert';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
     searchValue,
     setSearchValue,
     addTodo,
+    sincronizeTodos,
 } = useTodos();
 
   return (
@@ -89,6 +91,10 @@ function App() {
                 />
             </Modal>
         )}
+
+        <ChangeAlert 
+         sincronize = {sincronizeTodos}
+        />
         
     </>
 );
